@@ -5,8 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NET_ININ4_PR1._2___z3"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="700" Width="500">
     <Grid>
-        
+        <DataGrid
+            AutoGenerateColumns="False"
+            ItemsSource="{Binding Source={StaticResource Produkty}, XPath=produkt}"
+            >
+            <DataGrid.Columns>
+                <DataGridTextColumn
+                    Header="Nazwa"
+                    Binding="{Binding XPath=nazwa}"
+                    />
+                <DataGridTextColumn
+                    Header="Cena"
+                    Binding="{Binding XPath=cena}"
+                    />
+                <DataGridTextColumn
+                    Header="Kraj Pochodzenia"
+                    Binding="{Binding XPath=kraj}"
+                    />
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>
